@@ -1,8 +1,8 @@
 # typescript-selenium-mocha-testing
 
-**Typescript + Selenium + Mocha** — ParaBank.
+**Typescript + Selenium + Mocha** - ParaBank.
 
-[English](README.md) · [Español](README.es.md)
+[English](README.md) � [Espa�ol](README.es.md)
 
 Independent automation example. Each repository owns its tests, dependencies and CI.
 
@@ -21,6 +21,8 @@ python scripts/run.py -- npm test
 ```
 
 For an external API, set DEMO_BASE_URL and DEMO_API_KEY and omit --local-api. PARABANK_URL overrides the public UI URL. Environment variables must be set in your shell; .env files are not loaded automatically.
+
+UI CI uses an isolated official ParaBank Docker container with JDBC and records its image digest. It never changes settings on the public instance. Local runs use the public URL unless you override PARABANK_URL.
 
 ## Structure and reports
 
