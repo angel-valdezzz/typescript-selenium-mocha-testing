@@ -1,0 +1,24 @@
+{
+  "name": "typescript-selenium-mocha-testing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "tsx node_modules/mocha/bin/mocha.js \"tests/**/*.spec.ts\" --timeout 90000 --reporter mochawesome --reporter-options reportDir=reports,inlineAssets=true",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "selenium-webdriver": "4.27.0",
+    "mocha": "11.1.0",
+    "mochawesome": "7.1.3",
+    "tsx": "4.20.5",
+    "typescript": "5.9.3",
+    "@types/node": "22.10.2",
+    "@types/mocha": "10.0.10",
+    "@types/selenium-webdriver": "4.1.27"
+  },
+  "devDependencies": {}
+}
