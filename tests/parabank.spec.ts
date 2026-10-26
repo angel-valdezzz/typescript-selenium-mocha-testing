@@ -5,7 +5,9 @@ import { ParaBank } from '../pages/parabank.js';
 describe('ParaBank customer journeys', function() {
   this.timeout(90000); let driver: any; let bank: ParaBank;
   beforeEach(async function() {
-    driver=await new Builder().forBrowser('chrome').setChromeOptions(new chrome.Options().addArguments('--headless=new','--no-sandbox','--disable-dev-shm-usage','--window-size=1440,900')).build(); bank=new ParaBank(driver);
+    const options = new chrome.Options();
+    options.addArguments('--headless=new','--no-sandbox','--disable-dev-shm-usage','--window-size=1440,900');
+    driver=await new Builder().forBrowser('chrome').setChromeOptions(options).build(); bank=new ParaBank(driver);
   });
   afterEach(async function() {
     if (!driver) return;

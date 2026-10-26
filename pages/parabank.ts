@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto';
 import assert from 'node:assert/strict';
 export class ParaBank {
   driver: any; username: string; password: string;
-  constructor(driver: any) { this.driver=driver; this.username='qa'+randomUUID().replaceAll('-',''); this.password='DemoPass42!'; }
+  constructor(driver: any) { this.driver=driver; this.username='qa'+randomUUID().replaceAll('-','').slice(0,18); this.password='DemoPass42!'; }
   async element(id: string) { return this.driver.wait(until.elementLocated(By.id(id)),20000); }
   async home() { await this.driver.get((process.env.PARABANK_URL || 'https://parabank.parasoft.com/parabank')+'/index.htm'); }
   async link(name: string) { const e=await this.driver.wait(until.elementLocated(By.linkText(name)),20000); await e.click(); }
